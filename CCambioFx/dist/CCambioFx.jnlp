@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="CCambioFx.jar" size="25330" download="eager" />
+=======
+    <jar href="CCambioFx.jar" size="164706" download="eager" />
+>>>>>>> Gary
     <jar href="lib\jfoenix-0.0.0-SNAPSHOT.jar" size="2401976" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="CCambioFx" >

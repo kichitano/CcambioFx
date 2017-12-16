@@ -9,11 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD:CCambioFx/build/classes/PkgAplicacion/LoginDesign.fxml
-<AnchorPane id="AnchorPane" prefHeight="280.0" prefWidth="494.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.LoginController">
-=======
 <AnchorPane id="AnchorPane" prefHeight="274.0" prefWidth="494.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.LoginController">
->>>>>>> Gary:CCambioFx/build/classes/PkgAplicacion/FXMLDocument.fxml
    <children>
        
       <ImageView fitHeight="280.0" fitWidth="494.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
@@ -23,7 +19,7 @@
       </ImageView>
       <AnchorPane layoutX="238.0" layoutY="17.0" prefHeight="244.0" prefWidth="235.0" style="-fx-background-color: #ffffff;" />
       
-      <Label fx:id="LblCerrar" layoutX="473.0" layoutY="-1.0" onMouseClicked="#handleClose" text="X">
+      <Label layoutX="473.0" layoutY="-1.0" onMouseClicked="#handleClose" text="X">
          <font>
             <Font size="20.0" />
          </font>
