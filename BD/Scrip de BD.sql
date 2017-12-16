@@ -139,7 +139,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`Provincia` (
   `Departamento_IdDepartamento` INT NOT NULL,
-  `idProvincia` INT NOT NULL,
+  `idProvincia` INT NOT NULL AUTO_INCREMENT,
   `NombreProvincia` VARCHAR(70) NULL,
   PRIMARY KEY (`idProvincia`),
   INDEX `fk_Provincia_Departamento1_idx` (`Departamento_IdDepartamento` ASC),
@@ -155,9 +155,9 @@ ENGINE = InnoDB;
 -- Table `DBCasaCambioForex`.`Distrito`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`Distrito` (
-  `IdDistrito` INT NOT NULL,
-  `NombreDistrito` VARCHAR(70) NULL,
   `Provincia_idProvincia` INT NOT NULL,
+  `IdDistrito` INT NOT NULL AUTO_INCREMENT,
+  `NombreDistrito` VARCHAR(70) NULL,
   PRIMARY KEY (`IdDistrito`),
   INDEX `fk_Distrito_Provincia1_idx` (`Provincia_idProvincia` ASC),
   CONSTRAINT `fk_Distrito_Provincia1`
