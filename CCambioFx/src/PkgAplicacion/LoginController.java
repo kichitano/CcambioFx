@@ -11,9 +11,19 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
+<<<<<<< HEAD
 import java.util.concurrent.FutureTask;
+=======
+import static java.util.concurrent.Executors.callable;
+import static java.util.concurrent.Executors.callable;
+import static java.util.concurrent.Executors.callable;
+import java.util.concurrent.FutureTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+>>>>>>> design0.1
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +33,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+<<<<<<< HEAD
+=======
+import javafx.stage.Window;
+>>>>>>> design0.1
 
 /**
  *
@@ -78,9 +92,15 @@ public class LoginController implements Initializable {
                 } catch (IOException ex) {}
                 
                 Scene scene = new Scene(root);
+<<<<<<< HEAD
                 Stage menuStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 menuStage.setScene(scene);
                 menuStage.show();
+=======
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+>>>>>>> design0.1
             }
             
         });
