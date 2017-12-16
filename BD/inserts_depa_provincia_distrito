@@ -25,7 +25,7 @@ INSERT INTO departamento (NombreDepartamento) VALUES
 ( 'TUMBES'),
 ( 'UCAYALI');
 
-/* DISTRITOS */
+/* PROVINCIAS */
 
 INSERT INTO provincia ( NombreProvincia, Departamento_IdDepartamento) VALUES
 ( 'CHACHAPOYAS ', 1),
