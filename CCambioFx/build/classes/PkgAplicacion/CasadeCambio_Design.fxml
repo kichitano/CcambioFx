@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="PkgAplicacion.CasadeCambio_DesignController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="149.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../PkgImagenes/ic_account_balance_black_48dp.png" />
+         </image>
+      </ImageView>
+      <JFXTextField layoutX="107.0" layoutY="265.0" prefHeight="25.0" prefWidth="226.0" promptText="Direccion" />
+      <JFXTextField layoutX="107.0" layoutY="423.0" prefHeight="25.0" prefWidth="226.0" promptText="Telefono" />
+      <JFXTextField layoutX="107.0" layoutY="465.0" prefHeight="25.0" prefWidth="226.0" promptText="Celular" />
+      <JFXButton layoutX="161.0" layoutY="510.0" prefHeight="41.0" prefWidth="127.0" style="-fx-border-color: black;" text="Guardar" />
+      <Label layoutX="410.0" layoutY="14.0" text="X">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="CbTipoOficina" layoutX="107.0" layoutY="223.0" prefHeight="25.0" prefWidth="226.0" promptText="Tipo de Oficina" />
+      <JFXComboBox layoutX="107.0" layoutY="307.0" prefHeight="25.0" prefWidth="226.0" promptText="Departamento" />
+      <JFXComboBox layoutX="107.0" layoutY="347.0" prefHeight="25.0" prefWidth="226.0" promptText="Provincia" />
+      <JFXComboBox layoutX="107.0" layoutY="383.0" prefHeight="25.0" prefWidth="226.0" promptText="Distrito" />
+   </children>
+</AnchorPane>
