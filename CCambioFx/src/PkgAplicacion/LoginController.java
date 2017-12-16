@@ -19,7 +19,7 @@ import javafx.scene.control.Label;
  *
  * @author Gary
  */
-public class FXMLDocumentController implements Initializable {
+public class LoginController implements Initializable {
         
     @FXML
     private Label label;
@@ -28,7 +28,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private JFXPasswordField TxtPassword;
     
-    public FXMLDocumentController(){}
+    public LoginController(){}
     
     @FXML
     private void handleClose(ActionEvent event) {
