@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="280.0" prefWidth="494.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="280.0" prefWidth="494.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.LoginController">
    <children>
        
       <ImageView fitHeight="155.0" fitWidth="151.0" layoutX="40.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
@@ -16,7 +16,7 @@
          </image>
       </ImageView>
       
-      <Label layoutX="473.0" layoutY="-1.0" onMouseClicked="#handleClose" text="X">
+      <Label fx:id="LblCerrar" layoutX="473.0" layoutY="-1.0" onMouseClicked="#handleClose" text="X">
          <font>
             <Font size="20.0" />
          </font>
