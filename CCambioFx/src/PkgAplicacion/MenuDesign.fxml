@@ -7,22 +7,22 @@
 
 <AnchorPane id="AnchorPane" prefHeight="538.0" prefWidth="560.0" style="-fx-background-color: #ffffff; -fx-border-color: #009688;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="PkgAplicacion.MenuController">
    <children>
-      <JFXButton layoutX="129.0" layoutY="77.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Casa de cambio" textFill="WHITE">
+      <JFXButton fx:id="BtnCasaCambio" onAction="#AbrirCasaCambio" layoutX="129.0" layoutY="77.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Casa de cambio" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="129.0" layoutY="174.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Usuarios" textFill="WHITE">
+      <JFXButton fx:id="BtnUsuarios" onAction="#AbrirUsuarios" layoutX="129.0" layoutY="174.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Usuarios" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="129.0" layoutY="269.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Sistema de Cambio" textFill="WHITE">
+      <JFXButton fx:id="BtnSistemaCambio" onAction="#AbrirSistemaCambio" layoutX="129.0" layoutY="269.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Sistema de Cambio" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="129.0" layoutY="365.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Reportes" textFill="WHITE">
+      <JFXButton fx:id="BtnReportes" onAction="#AbrirReportes" layoutX="129.0" layoutY="365.0" prefHeight="80.0" prefWidth="349.0" style="-fx-background-color: #009688;" text="Reportes" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
