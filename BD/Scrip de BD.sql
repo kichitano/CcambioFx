@@ -114,6 +114,111 @@ CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`Usuario` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `DBCasaCambioForex`.`TipoOficina`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`TipoOficina` (
+  `IdTipoOficina` INT NOT NULL AUTO_INCREMENT,
+  `DescripcionTipoOficina` VARCHAR(60) NULL,
+  PRIMARY KEY (`IdTipoOficina`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `DBCasaCambioForex`.`Departamento`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`Departamento` (
+  `IdDepartamento` INT NOT NULL AUTO_INCREMENT,
+  `NombreDepartamento` VARCHAR(70) NULL,
+  PRIMARY KEY (`IdDepartamento`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `DBCasaCambioForex`.`Provincia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`Provincia` (
+  `Departamento_IdDepartamento` INT NOT NULL,
+  `idProvincia` INT NOT NULL AUTO_INCREMENT,
+  `NombreProvincia` VARCHAR(70) NULL,
+  PRIMARY KEY (`idProvincia`),
+  INDEX `fk_Provincia_Departamento1_idx` (`Departamento_IdDepartamento` ASC),
+  CONSTRAINT `fk_Provincia_Departamento1`
+    FOREIGN KEY (`Departamento_IdDepartamento`)
+    REFERENCES `DBCasaCambioForex`.`Departamento` (`IdDepartamento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `DBCasaCambioForex`.`Distrito`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`Distrito` (
+  `Provincia_idProvincia` INT NOT NULL,
+  `IdDistrito` INT NOT NULL AUTO_INCREMENT,
+  `NombreDistrito` VARCHAR(70) NULL,
+  PRIMARY KEY (`IdDistrito`),
+  INDEX `fk_Distrito_Provincia1_idx` (`Provincia_idProvincia` ASC),
+  CONSTRAINT `fk_Distrito_Provincia1`
+    FOREIGN KEY (`Provincia_idProvincia`)
+    REFERENCES `DBCasaCambioForex`.`Provincia` (`idProvincia`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `DBCasaCambioForex`.`CasaCambio`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`CasaCambio` (
+  `IdCasaCambio` INT NOT NULL AUTO_INCREMENT,
+  `TipoOficina_IdTipoOficina` INT NOT NULL,
+  `DireccionCasaCambio` VARCHAR(150) NULL,
+  `Distrito_IdDistrito` INT NOT NULL,
+  `CasaCambioTelefono` VARCHAR(15) NOT NULL DEFAULT 'Sin numero',
+  `CasaCambioCelular` VARCHAR(20) NOT NULL DEFAULT 'Sin numero',
+  PRIMARY KEY (`IdCasaCambio`),
+  INDEX `fk_CasaCambio_TipoOficina1_idx` (`TipoOficina_IdTipoOficina` ASC),
+  INDEX `fk_CasaCambio_Distrito1_idx` (`Distrito_IdDistrito` ASC),
+  CONSTRAINT `fk_CasaCambio_TipoOficina1`
+    FOREIGN KEY (`TipoOficina_IdTipoOficina`)
+    REFERENCES `DBCasaCambioForex`.`TipoOficina` (`IdTipoOficina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CasaCambio_Distrito1`
+    FOREIGN KEY (`Distrito_IdDistrito`)
+    REFERENCES `DBCasaCambioForex`.`Distrito` (`IdDistrito`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `DBCasaCambioForex`.`CasaCambioPropietario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DBCasaCambioForex`.`CasaCambioPropietario` (
+  `IdCasaCambioPropietario` INT NOT NULL AUTO_INCREMENT,
+  `Persona_NumeroDocumentoPersona` VARCHAR(25) NOT NULL,
+  `CodigoOficialCumplimientoPropietario` VARCHAR(40) NOT NULL,
+  `CantidadCasaCambioPropietario` INT NOT NULL DEFAULT 0,
+  `CasaCambio_IdCasaCambio` INT NOT NULL,
+  PRIMARY KEY (`IdCasaCambioPropietario`),
+  INDEX `fk_CasaCambioPropietario_Persona1_idx` (`Persona_NumeroDocumentoPersona` ASC),
+  INDEX `fk_CasaCambioPropietario_CasaCambio1_idx` (`CasaCambio_IdCasaCambio` ASC),
+  CONSTRAINT `fk_CasaCambioPropietario_Persona1`
+    FOREIGN KEY (`Persona_NumeroDocumentoPersona`)
+    REFERENCES `DBCasaCambioForex`.`Persona` (`NumeroDocumentoPersona`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CasaCambioPropietario_CasaCambio1`
+    FOREIGN KEY (`CasaCambio_IdCasaCambio`)
+    REFERENCES `DBCasaCambioForex`.`CasaCambio` (`IdCasaCambio`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
