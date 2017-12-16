@@ -7,9 +7,12 @@ package PkgAplicacion;
 
 import java.io.IOException;
 import javafx.application.Application;
+<<<<<<< HEAD
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+=======
+>>>>>>> kichi
 import javafx.stage.Stage;
 
 /**
@@ -20,6 +23,7 @@ public class Menu extends Application {
     
     @Override
     public void start(Stage menuStage) throws IOException {
+<<<<<<< HEAD
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuDesign.fxml"));
         Parent root = loader.load();
@@ -27,6 +31,9 @@ public class Menu extends Application {
         menuStage.setScene(scene);
         menuStage.show();
         
+=======
+
+>>>>>>> kichi
     }
 
     /**

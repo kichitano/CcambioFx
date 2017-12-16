@@ -7,6 +7,7 @@ package PkgAplicacion;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -19,9 +20,31 @@ public class MenuController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    public MenuController(){}
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void AbrirCasaCambio() {
+        
+    }
+    
+    @FXML
+    private void AbrirUsuarios() {
+        
+    }
+    
+    @FXML
+    private void AbrirSistemaCambio() {    
+    }
+    
+    @FXML
+    private void AbrirReportes() {
+        
     }    
     
 }
