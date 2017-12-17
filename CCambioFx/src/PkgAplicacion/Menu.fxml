@@ -8,27 +8,52 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="682.0" style="-fx-background-color: #99cccc; -fx-border-color: #3b6d6d; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: skyblue;">
+      <HBox prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #3b6d6d;">
          <children>
-            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="55.0" prefWidth="329.0" text="Casa de Cambio X" textAlignment="CENTER" textFill="#f8f8f8">
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="55.0" prefWidth="659.0" text="Casa de Cambio" textAlignment="CENTER" textFill="#f8f8f8">
                <font>
                   <Font name="System Bold" size="38.0" />
                </font>
             </Label>
+            <JFXButton text="X">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
          </children>
       </HBox>
-      <SplitPane dividerPositions="0.20294117647058824" prefHeight="450.0" prefWidth="682.0">
+      <SplitPane dividerPositions="0.20597014925373133" prefHeight="450.0" prefWidth="682.0" style="-fx-background-color: #99cccc;">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="137.0">
                <children>
-                  <JFXButton layoutY="109.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Salir" />
-                  <JFXButton layoutY="1.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Casa de Cambio" />
-                  <JFXButton layoutY="55.0" prefHeight="27.0" prefWidth="135.0" style="-fx-border-color: black;" text="Sistema" />
-                  <JFXButton layoutY="28.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Usuario" />
-                  <JFXButton layoutY="82.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Reportes" />
+                  <JFXButton layoutY="133.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Salir" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutY="1.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Casa de Cambio" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+            
+                  </JFXButton>
+                  <JFXButton layoutY="67.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Sistema" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutY="34.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutY="100.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Reportes" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="488.0" />
