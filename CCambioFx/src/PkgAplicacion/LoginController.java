@@ -19,9 +19,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -69,15 +69,15 @@ public class LoginController implements Initializable {
                 result = futureTask.get(); // will wait for the async completion
             } catch (InterruptedException | ExecutionException ie) {}
             
-            if(result){     
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuDesign.fxml"));
-                Parent root = null;
+            if(result){  
+                
+                VBox loader = null;
                 
                 try {
-                    root = loader.load();
+                    loader = (VBox) FXMLLoader.load(getClass().getResource("MenuDesign.fxml"));
                 } catch (IOException ex) {}
                 
-                Scene scene = new Scene(root);
+                Scene scene = new Scene(loader);
                 Stage menuStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 menuStage.setScene(scene);
                 menuStage.show();

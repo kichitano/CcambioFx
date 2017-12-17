@@ -2056,3 +2056,9 @@ INSERT INTO distrito ( NombreDistrito, Provincia_idProvincia) VALUES
 ( 'IRAZOLA', 192),
 ( 'CURIMANA', 192),
 ( 'PURUS', 193);
+
+INSERT INTO `dbcasacambioforex`.`tipooficina`
+(`DescripcionTipoOficina`)
+VALUES
+('AGENCIA'),('OFICINA'),('SUCURSAL');
+

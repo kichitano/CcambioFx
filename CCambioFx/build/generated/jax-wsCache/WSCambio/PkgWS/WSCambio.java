@@ -1,6 +1,7 @@
 
 package PkgWS;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -41,5 +42,17 @@ public interface WSCambio {
         String usuario,
         @WebParam(name = "password", targetNamespace = "")
         String password);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<PkgWS.ClsEntidadTipoOficina>
+     */
+    @WebMethod(operationName = "CargarTipoOficina")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CargarTipoOficina", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarTipoOficina")
+    @ResponseWrapper(localName = "CargarTipoOficinaResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarTipoOficinaResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/CargarTipoOficinaRequest", output = "http://PkgWsCambio/WSCambio/CargarTipoOficinaResponse")
+    public List<ClsEntidadTipoOficina> cargarTipoOficina();
 
 }

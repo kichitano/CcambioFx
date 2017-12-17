@@ -8,8 +8,10 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="CCambioFx.jar" size="166704" download="eager" />
+    <jar href="CCambioFx.jar" size="170601" download="eager" />
+    <jar href="lib\gson-2.8.0.jar" size="231952" download="eager" />
     <jar href="lib\jfoenix-0.0.0-SNAPSHOT.jar" size="2401976" download="eager" />
+    <jar href="lib\json-20131018.jar" size="65139" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="CCambioFx" >
     <param name="requiredFXVersion" value="8.0+"/>

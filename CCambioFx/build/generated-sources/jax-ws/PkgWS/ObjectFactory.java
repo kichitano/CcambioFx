@@ -24,7 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _CargarTipoOficina_QNAME = new QName("http://PkgWsCambio/", "CargarTipoOficina");
     private final static QName _IniciarSesion_QNAME = new QName("http://PkgWsCambio/", "IniciarSesion");
+    private final static QName _CargarTipoOficinaResponse_QNAME = new QName("http://PkgWsCambio/", "CargarTipoOficinaResponse");
     private final static QName _IniciarSesionResponse_QNAME = new QName("http://PkgWsCambio/", "IniciarSesionResponse");
 
     /**
@@ -32,6 +34,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link CargarTipoOficinaResponse }
+     * 
+     */
+    public CargarTipoOficinaResponse createCargarTipoOficinaResponse() {
+        return new CargarTipoOficinaResponse();
     }
 
     /**
@@ -51,11 +61,36 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CargarTipoOficina }
+     * 
+     */
+    public CargarTipoOficina createCargarTipoOficina() {
+        return new CargarTipoOficina();
+    }
+
+    /**
+     * Create an instance of {@link ClsEntidadTipoOficina }
+     * 
+     */
+    public ClsEntidadTipoOficina createClsEntidadTipoOficina() {
+        return new ClsEntidadTipoOficina();
+    }
+
+    /**
      * Create an instance of {@link ClsEntidadPersona }
      * 
      */
     public ClsEntidadPersona createClsEntidadPersona() {
         return new ClsEntidadPersona();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CargarTipoOficina }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "CargarTipoOficina")
+    public JAXBElement<CargarTipoOficina> createCargarTipoOficina(CargarTipoOficina value) {
+        return new JAXBElement<CargarTipoOficina>(_CargarTipoOficina_QNAME, CargarTipoOficina.class, null, value);
     }
 
     /**
@@ -65,6 +100,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "IniciarSesion")
     public JAXBElement<IniciarSesion> createIniciarSesion(IniciarSesion value) {
         return new JAXBElement<IniciarSesion>(_IniciarSesion_QNAME, IniciarSesion.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CargarTipoOficinaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "CargarTipoOficinaResponse")
+    public JAXBElement<CargarTipoOficinaResponse> createCargarTipoOficinaResponse(CargarTipoOficinaResponse value) {
+        return new JAXBElement<CargarTipoOficinaResponse>(_CargarTipoOficinaResponse_QNAME, CargarTipoOficinaResponse.class, null, value);
     }
 
     /**

@@ -5,15 +5,15 @@
  */
 package PkgWsCambio;
 
-import PkgEntidad.ClsEntidadPersona;
 import PkgNegocios.ClsNegocioPersona;
 import java.sql.SQLException;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import PkgEntidad.ClsEntidadPersona;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import PkgEntidad.ClsEntidadTipoOficina;
+import PkgNegocios.ClsNegocioTipoOficina;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,6 +24,9 @@ public class WSCambio {
 
     /**
      * Web service operation
+     * @param usuario
+     * @param password
+     * @return 
      */
     @WebMethod(operationName = "IniciarSesion")
     public ClsEntidadPersona IniciarSesion(@WebParam(name = "usuario") String usuario, @WebParam(name = "password") String password) {
@@ -32,12 +35,22 @@ public class WSCambio {
         
         try {
             entidadPersona = negocioPersona.IniciarSesion(usuario, password);
-        } catch (SQLException ex) {
-            Logger.getLogger(WSCambio.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(WSCambio.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (SQLException | ClassNotFoundException ex) {}
       
         return entidadPersona;
+    }
+
+    /**
+     * Web service operation
+     * @return 
+     */
+    @WebMethod(operationName = "CargarTipoOficina")
+    public ArrayList<ClsEntidadTipoOficina> CargarTipoOficina() {
+        ClsNegocioTipoOficina negocioTipoOficina = new ClsNegocioTipoOficina();
+        
+        ArrayList<ClsEntidadTipoOficina> DatosTipoOficina = negocioTipoOficina.ObtenerDatosTipoOficina();
+        
+        return DatosTipoOficina;
+        
     }
 }

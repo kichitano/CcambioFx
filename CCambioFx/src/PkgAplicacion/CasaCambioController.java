@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author Gary
  */
-public class CasadeCambio_DesignController implements Initializable {
+public class CasaCambioController implements Initializable {
 
     /**
      * Initializes the controller class.

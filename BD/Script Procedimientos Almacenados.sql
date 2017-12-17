@@ -140,3 +140,10 @@ DescripcionTipoUsuario=parDescripcionTipoUsuario
    WHERE IdTipoUsuario=parIdTipoUsuario;
 END @@ 
 DELIMITER ;
+
+/* CREACION DE VISTAS DE BD */
+
+/* VISTA TIPO OFICINA */
+CREATE VIEW
+vista_TipoOficina as
+select * from TipoOficina;

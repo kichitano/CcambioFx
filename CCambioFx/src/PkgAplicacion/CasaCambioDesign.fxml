@@ -8,9 +8,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="PkgAplicacion.CasadeCambio_DesignController">
+<VBox id="AnchorPane" prefHeight="580.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.151" fx:controller="PkgAplicacion.CasaCambioController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="149.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -31,4 +32,4 @@
       <JFXComboBox layoutX="107.0" layoutY="347.0" prefHeight="25.0" prefWidth="226.0" promptText="Provincia" />
       <JFXComboBox layoutX="107.0" layoutY="383.0" prefHeight="25.0" prefWidth="226.0" promptText="Distrito" />
    </children>
-</AnchorPane>
+</VBox>

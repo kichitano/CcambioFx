@@ -19,8 +19,7 @@ public class ClsConexion {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3305/dbcasacambioforex","root","1234");
-        }catch(SQLException ex){}
-        catch(Exception e){}
+        }catch(SQLException | ClassNotFoundException ex){}
         return con;
     }
 }

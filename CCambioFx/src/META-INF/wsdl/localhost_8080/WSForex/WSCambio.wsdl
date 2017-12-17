@@ -10,15 +10,34 @@
 <message name="IniciarSesionResponse">
 <part name="parameters" element="tns:IniciarSesionResponse"/>
 </message>
+<message name="CargarTipoOficina">
+<part name="parameters" element="tns:CargarTipoOficina"/>
+</message>
+<message name="CargarTipoOficinaResponse">
+<part name="parameters" element="tns:CargarTipoOficinaResponse"/>
+</message>
 <portType name="WSCambio">
 <operation name="IniciarSesion">
 <input wsam:Action="http://PkgWsCambio/WSCambio/IniciarSesionRequest" message="tns:IniciarSesion"/>
 <output wsam:Action="http://PkgWsCambio/WSCambio/IniciarSesionResponse" message="tns:IniciarSesionResponse"/>
 </operation>
+<operation name="CargarTipoOficina">
+<input wsam:Action="http://PkgWsCambio/WSCambio/CargarTipoOficinaRequest" message="tns:CargarTipoOficina"/>
+<output wsam:Action="http://PkgWsCambio/WSCambio/CargarTipoOficinaResponse" message="tns:CargarTipoOficinaResponse"/>
+</operation>
 </portType>
 <binding name="WSCambioPortBinding" type="tns:WSCambio">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="IniciarSesion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="CargarTipoOficina">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

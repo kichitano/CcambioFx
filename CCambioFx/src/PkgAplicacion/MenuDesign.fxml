@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.MenuController">
    <children>
       <HBox prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: skyblue;">
          <children>
@@ -24,14 +24,22 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="137.0">
                <children>
-                  <JFXButton layoutY="109.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Salir" />
-                  <JFXButton layoutY="1.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Casa de Cambio" />
-                  <JFXButton layoutY="55.0" prefHeight="27.0" prefWidth="135.0" style="-fx-border-color: black;" text="Sistema" />
-                  <JFXButton layoutY="28.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Usuario" />
-                  <JFXButton layoutY="82.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Reportes" />
+                  <JFXButton fx:id="BtnSalir" layoutY="109.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Cerrar Sesion" onAction="#CerrarSesion"/>
+                  <JFXButton fx:id="BtnCasaCambio" layoutY="1.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Casa de Cambio" onAction="#AbrirMenuCasaCambio"/>
+                  <JFXButton fx:id="BtnSistema" layoutY="55.0" prefHeight="27.0" prefWidth="135.0" style="-fx-border-color: black;" text="Sistema" onAction="#AbrirMenuSistema"/>
+                  <JFXButton fx:id="BtnUsuario" layoutY="28.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Usuario" onAction="#AbrirMenuUsuario"/>
+                  <JFXButton fx:id="BtnReportes" layoutY="82.0" prefHeight="25.0" prefWidth="135.0" style="-fx-border-color: black;" text="Reportes" onAction="#AbrirMenuReportes"/>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="488.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="488.0">
+              <children>
+                  <VBox fx:id="dataPane">
+                      <children>
+                          
+                      </children>
+                  </VBox>
+               </children>
+          </AnchorPane>
         </items>
       </SplitPane>
    </children>
