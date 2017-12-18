@@ -25,7 +25,9 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _CargarTipoOficina_QNAME = new QName("http://PkgWsCambio/", "CargarTipoOficina");
+    private final static QName _CargarListaUbicacion_QNAME = new QName("http://PkgWsCambio/", "CargarListaUbicacion");
     private final static QName _IniciarSesion_QNAME = new QName("http://PkgWsCambio/", "IniciarSesion");
+    private final static QName _CargarListaUbicacionResponse_QNAME = new QName("http://PkgWsCambio/", "CargarListaUbicacionResponse");
     private final static QName _CargarTipoOficinaResponse_QNAME = new QName("http://PkgWsCambio/", "CargarTipoOficinaResponse");
     private final static QName _IniciarSesionResponse_QNAME = new QName("http://PkgWsCambio/", "IniciarSesionResponse");
 
@@ -61,11 +63,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CargarListaUbicacionResponse }
+     * 
+     */
+    public CargarListaUbicacionResponse createCargarListaUbicacionResponse() {
+        return new CargarListaUbicacionResponse();
+    }
+
+    /**
      * Create an instance of {@link CargarTipoOficina }
      * 
      */
     public CargarTipoOficina createCargarTipoOficina() {
         return new CargarTipoOficina();
+    }
+
+    /**
+     * Create an instance of {@link CargarListaUbicacion }
+     * 
+     */
+    public CargarListaUbicacion createCargarListaUbicacion() {
+        return new CargarListaUbicacion();
     }
 
     /**
@@ -85,6 +103,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ClsEntidadListaUbicacion }
+     * 
+     */
+    public ClsEntidadListaUbicacion createClsEntidadListaUbicacion() {
+        return new ClsEntidadListaUbicacion();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CargarTipoOficina }{@code >}}
      * 
      */
@@ -94,12 +120,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CargarListaUbicacion }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "CargarListaUbicacion")
+    public JAXBElement<CargarListaUbicacion> createCargarListaUbicacion(CargarListaUbicacion value) {
+        return new JAXBElement<CargarListaUbicacion>(_CargarListaUbicacion_QNAME, CargarListaUbicacion.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link IniciarSesion }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "IniciarSesion")
     public JAXBElement<IniciarSesion> createIniciarSesion(IniciarSesion value) {
         return new JAXBElement<IniciarSesion>(_IniciarSesion_QNAME, IniciarSesion.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CargarListaUbicacionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "CargarListaUbicacionResponse")
+    public JAXBElement<CargarListaUbicacionResponse> createCargarListaUbicacionResponse(CargarListaUbicacionResponse value) {
+        return new JAXBElement<CargarListaUbicacionResponse>(_CargarListaUbicacionResponse_QNAME, CargarListaUbicacionResponse.class, null, value);
     }
 
     /**
