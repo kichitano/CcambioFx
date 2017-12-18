@@ -34,16 +34,9 @@ public class MenuController{
     private VBox dataPane;
     
     public MenuController(){}
-    
-    public void start() throws IOException{
-        DescargarDatos descargarDatos = new DescargarDatos();
-        Thread thread = new Thread(descargarDatos);
-        thread.start();
-    }
-    
+      
     public void setDataPane(Node node) throws IOException{
         dataPane.getChildren().setAll(node);
-        start();
     }
     
     public VBox fadeAnimate(String url) throws IOException {
@@ -58,15 +51,33 @@ public class MenuController{
         return v;
     }
 
+    
+    /* MENU CASA CAMBIO INICIO */
     @FXML
     public void AbrirMenuCasaCambio(ActionEvent event) throws IOException {
         setDataPane(fadeAnimate("/PkgAplicacion/CasaCambioDesign.fxml"));
+        DescargarDatos();
     }
     
+    public void DescargarDatos() throws IOException{
+        DescargarDatos descargarDatos = new DescargarDatos();
+        Thread thread = new Thread(descargarDatos);
+        thread.start();
+    }
+    
+    public void CargarDatosOpciones(){
+        String archivo = "Dir/DatosTO/DatosTO.json";
+        
+    }
+    /* MENU CASA CAMBIO FIN */
+    
+    /* MENU SISTEMA INICIO */
     @FXML
     private void AbrirMenuSistema() {
         
     }
+    /* MENU SISTEMA FIN */
+    
     
     @FXML
     private void AbrirMenuUsuario() {    
