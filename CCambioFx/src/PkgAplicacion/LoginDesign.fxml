@@ -9,33 +9,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="274.0" prefWidth="494.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.LoginController">
+=======
+<AnchorPane id="AnchorPane" prefHeight="276.0" prefWidth="483.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PkgAplicacion.LoginController">
+>>>>>>> design1.1
    <children>
        
-      <ImageView fitHeight="280.0" fitWidth="494.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="277.0" fitWidth="532.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../PkgImagenes/background-login.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="238.0" layoutY="17.0" prefHeight="244.0" prefWidth="235.0" style="-fx-background-color: #ffffff;" />
+      <AnchorPane layoutX="233.0" layoutY="24.0" prefHeight="244.0" prefWidth="235.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="67.0" fitWidth="72.0" layoutX="84.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../PkgImagenes/u-w.png" />
+               </image>
+            </ImageView>
+            
+            <JFXTextField fx:id="TxtUsuario" alignment="CENTER" focusColor="#e3150b" labelFloat="true" layoutX="23.0" layoutY="81.0" opacity="0.5" prefHeight="26.0" prefWidth="190.0" promptText="Usuario" unFocusColor="#ddcccc" />
+            <JFXPasswordField fx:id="TxtPassword" alignment="CENTER" focusColor="#e3150b" labelFloat="true" layoutX="23.0" layoutY="122.0" opacity="0.5" prefHeight="26.0" prefWidth="190.0" promptText="Password" unFocusColor="#ddcccc" />
+            <JFXButton fx:id="BtnIngresar" layoutX="23.0" layoutY="169.0" onAction="#iniciarSesion" prefHeight="32.0" prefWidth="190.0" style="-fx-background-color: #99CCCC;" text="Ingresar" textAlignment="CENTER" textFill="#fcf9f9" textOverrun="CLIP">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
       
-      <Label layoutX="473.0" layoutY="-1.0" onMouseClicked="#handleClose" text="X">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      
-      <JFXTextField fx:id="TxtUsuario" alignment="CENTER" focusColor="#e3150b" labelFloat="true" layoutX="257.0" layoutY="99.0" opacity="0.5" prefHeight="26.0" prefWidth="190.0" promptText="Usuario" unFocusColor="#ddcccc" />
-      <JFXPasswordField fx:id="TxtPassword" alignment="CENTER" focusColor="#e3150b" labelFloat="true" layoutX="257.0" layoutY="140.0" opacity="0.5" prefHeight="26.0" prefWidth="190.0" promptText="Password" unFocusColor="#ddcccc" />
-      <JFXButton fx:id="BtnIngresar" layoutX="257.0" layoutY="193.0" onAction="#iniciarSesion" prefHeight="32.0" prefWidth="190.0" style="-fx-background-color: #99CCCC;" text="Ingresar" textAlignment="CENTER" textFill="#fcf9f9" textOverrun="CLIP">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </JFXButton>
-      
-      <Label layoutX="25.0" layoutY="181.0" prefHeight="56.0" prefWidth="194.0" text="Breve descripcion&#10; de este hermoso programa&#10;desarrollado por DevPro equisde&#10;" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="25.0" layoutY="186.0" prefHeight="56.0" prefWidth="194.0" text="Breve descripcion&#10; de este hermoso programa&#10;desarrollado por DevPro equisde&#10;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
+      <ImageView fitHeight="179.0" fitWidth="194.0" layoutX="31.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../PkgImagenes/logo.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="468.0" layoutY="-1.0" text="X">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

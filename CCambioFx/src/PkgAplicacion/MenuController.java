@@ -5,6 +5,7 @@
  */
 package PkgAplicacion;
 
+<<<<<<< HEAD
 import PkgNegocios.DescargarDatos;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -21,6 +22,16 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+=======
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
+>>>>>>> design1.1
 
 /**
  * FXML Controller class
@@ -30,6 +41,7 @@ import javafx.util.Duration;
 public class MenuController{
 
     @FXML
+<<<<<<< HEAD
     private Button BtnSalir;
     private Button BtnCasaCambio;
     private Button BtnSistema;
@@ -39,12 +51,31 @@ public class MenuController{
     @FXML
     private VBox dataPane;
     
+=======
+    private JFXHamburger hamburguer;
+
+    @FXML
+    private JFXButton BtnSalir;
+
+    @FXML
+    private JFXButton BtnCasaCambio;
+
+    @FXML
+    private JFXButton BtnSistema;
+
+    @FXML
+    private JFXButton BtnUsuario;
+
+    @FXML
+    private JFXButton BtnReportes;
+>>>>>>> design1.1
     public MenuController(){}
       
     public void setDataPane(Node node) throws IOException{
         dataPane.getChildren().setAll(node);
     }
     
+<<<<<<< HEAD
     public VBox fadeAnimate(String url) throws IOException {
         VBox v = (VBox) FXMLLoader.load(getClass().getResource(url));
         FadeTransition ft = new FadeTransition(Duration.millis(400));
@@ -55,6 +86,18 @@ public class MenuController{
         ft.setAutoReverse(false);
         ft.play();
         return v;
+=======
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        HamburgerBackArrowBasicTransition burgertask = new HamburgerBackArrowBasicTransition(hamburguer);
+        burgertask.setRate(-1);
+        hamburguer.addEventHandler(MouseEvent.MOUSE_PRESSED,(e)-> {
+        
+        burgertask.setRate(burgertask.getRate()* -1);;
+        burgertask.play();
+        });
+>>>>>>> design1.1
     }
 
     
