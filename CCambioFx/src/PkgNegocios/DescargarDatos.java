@@ -9,6 +9,7 @@ import PkgWS.ClsEntidadPersona;
 import PkgWS.ClsEntidadTipoOficina;
 import PkgWS.WSCambio;
 import PkgWS.WSCambio_Service;
+import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
+import java.util.ArrayList;
 import org.json.JSONObject;
 
 /**
@@ -34,10 +36,21 @@ public class DescargarDatos extends Thread{
            DirDatosTO.mkdirs();
            JSONObject ObjDirDatosTOJson =  new JSONObject();
            JSONObject ArrayDirDatosTOJson = new JSONObject();
+           Gson gson = new Gson();
+           ArrayList<ClsEntidadTipoOficina> DatosTipoOficina = new ArrayList<>();
+           
             for(int x=0;x<wsCambio.cargarTipoOficina().size();x++) {
+                
+                ClsEntidadTipoOficina entidadTipoOficina = new ClsEntidadTipoOficina();
                 ArrayDirDatosTOJson.put("IdTipoOficina",wsCambio.cargarTipoOficina().get(x).getIdTIpoOficina()); 
                 ArrayDirDatosTOJson.put("DescripcionTipoOficina",wsCambio.cargarTipoOficina().get(x).getDescripcionTipoOficina());
+                entidadTipoOficina.setIdTIpoOficina(wsCambio.cargarTipoOficina().get(x).getIdTIpoOficina());
+                entidadTipoOficina.setDescripcionTipoOficina(wsCambio.cargarTipoOficina().get(x).getDescripcionTipoOficina());
+                DatosTipoOficina.add(entidadTipoOficina);
             }
+            
+            
+            
             ObjDirDatosTOJson.put("TipoOficinas", ArrayDirDatosTOJson);
             String archivo = "Dir/DatosTO/DatosTO.json";
             try (FileWriter file = new FileWriter(archivo)){
