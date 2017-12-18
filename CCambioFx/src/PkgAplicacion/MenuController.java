@@ -5,10 +5,14 @@
  */
 package PkgAplicacion;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -17,15 +21,35 @@ import javafx.fxml.Initializable;
  */
 public class MenuController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-    
+    @FXML
+    private JFXHamburger hamburguer;
+
+    @FXML
+    private JFXButton BtnSalir;
+
+    @FXML
+    private JFXButton BtnCasaCambio;
+
+    @FXML
+    private JFXButton BtnSistema;
+
+    @FXML
+    private JFXButton BtnUsuario;
+
+    @FXML
+    private JFXButton BtnReportes;
     public MenuController(){}
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        HamburgerBackArrowBasicTransition burgertask = new HamburgerBackArrowBasicTransition(hamburguer);
+        burgertask.setRate(-1);
+        hamburguer.addEventHandler(MouseEvent.MOUSE_PRESSED,(e)-> {
+        
+        burgertask.setRate(burgertask.getRate()* -1);;
+        burgertask.play();
+        });
     }
 
     @FXML

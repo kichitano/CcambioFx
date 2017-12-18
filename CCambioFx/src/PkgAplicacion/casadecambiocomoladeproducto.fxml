@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="636.0" style="-fx-background-color: #3b6d6d;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="447.0" prefWidth="659.0">
+         <children>
+            <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../PkgImagenes/ic_account_balance_white_36dp.png" />
+               </image>
+            </ImageView>
+            <JFXTextField focusColor="#99cccc" labelFloat="true" layoutX="130.0" layoutY="23.0" prefHeight="25.0" prefWidth="262.0" promptText="Direccion" style="-jfx-label-float: white;" unFocusColor="WHITE" />
+            <JFXTextField focusColor="#99cccc" labelFloat="true" layoutX="420.0" layoutY="23.0" prefHeight="25.0" prefWidth="191.0" promptText="Telefono" unFocusColor="WHITE" />
+            <JFXTextField focusColor="#99cccc" labelFloat="true" layoutX="421.0" layoutY="60.0" prefHeight="25.0" prefWidth="191.0" promptText="Celular" unFocusColor="WHITE" />
+            <JFXComboBox fx:id="CbTipoOficina" focusColor="#99cccc" labelFloat="true" layoutX="130.0" layoutY="60.0" prefHeight="25.0" prefWidth="262.0" promptText="Tipo de Oficina" unFocusColor="WHITE" />
+            <JFXComboBox focusColor="#99cccc" labelFloat="true" layoutX="130.0" layoutY="101.0" prefHeight="25.0" prefWidth="154.0" promptText="Departamento" unFocusColor="WHITE" />
+            <JFXComboBox focusColor="#99cccc" labelFloat="true" layoutX="293.0" layoutY="102.0" prefHeight="25.0" prefWidth="154.0" promptText="Provincia" unFocusColor="WHITE" />
+            <JFXComboBox focusColor="#99cccc" labelFloat="true" layoutX="456.0" layoutY="102.0" prefHeight="25.0" prefWidth="154.0" promptText="Distrito" unFocusColor="WHITE" />
+            <JFXTreeTableView layoutX="22.0" layoutY="174.0" prefHeight="254.0" prefWidth="592.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,6 +13,7 @@
    <children>
       <HBox prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #3b6d6d;">
          <children>
+            <JFXHamburger fx:id="hamburguer" prefHeight="55.0" prefWidth="107.0" />
             <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="55.0" prefWidth="659.0" text="Casa de Cambio" textAlignment="CENTER" textFill="#f8f8f8">
                <font>
                   <Font name="System Bold" size="38.0" />
@@ -28,28 +30,28 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="137.0">
                <children>
-                  <JFXButton layoutY="133.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Salir" textFill="WHITE">
+                  <JFXButton fx:id="BtnSalir" layoutY="133.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Salir" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutY="1.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Casa de Cambio" textFill="WHITE">
+                  <JFXButton fx:id="BtnCasaCambio" layoutY="1.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Casa de Cambio" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
             
                   </JFXButton>
-                  <JFXButton layoutY="67.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Sistema" textFill="WHITE">
+                  <JFXButton fx:id="BtnSistema" layoutY="67.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Sistema" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutY="34.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Usuario" textFill="WHITE">
+                  <JFXButton fx:id="BtnUsuario" layoutY="34.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Usuario" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutY="100.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Reportes" textFill="WHITE">
+                  <JFXButton fx:id="BtnReportes" layoutY="100.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #699b9b; -fx-border-color: white; -fx-border-width: 3;" text="Reportes" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
