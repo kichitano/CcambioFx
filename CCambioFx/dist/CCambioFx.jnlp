@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="CCambioFx.jar" size="171459" download="eager" />
+=======
+    <jar href="CCambioFx.jar" size="174035" download="eager" />
+>>>>>>> EDU
     <jar href="lib\gson-2.8.0.jar" size="231952" download="eager" />
     <jar href="lib\jfoenix-0.0.0-SNAPSHOT.jar" size="2401976" download="eager" />
     <jar href="lib\json-20131018.jar" size="65139" download="eager" />

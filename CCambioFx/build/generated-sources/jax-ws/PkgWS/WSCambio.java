@@ -27,6 +27,30 @@ public interface WSCambio {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<PkgWS.ClsEntidadTipoOficina>
+     */
+    @WebMethod(operationName = "CargarTipoOficina")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CargarTipoOficina", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarTipoOficina")
+    @ResponseWrapper(localName = "CargarTipoOficinaResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarTipoOficinaResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/CargarTipoOficinaRequest", output = "http://PkgWsCambio/WSCambio/CargarTipoOficinaResponse")
+    public List<ClsEntidadTipoOficina> cargarTipoOficina();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<PkgWS.ClsEntidadListaUbicacion>
+     */
+    @WebMethod(operationName = "CargarListaUbicacion")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CargarListaUbicacion", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarListaUbicacion")
+    @ResponseWrapper(localName = "CargarListaUbicacionResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarListaUbicacionResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/CargarListaUbicacionRequest", output = "http://PkgWsCambio/WSCambio/CargarListaUbicacionResponse")
+    public List<ClsEntidadListaUbicacion> cargarListaUbicacion();
+
+    /**
+     * 
      * @param password
      * @param usuario
      * @return
@@ -42,17 +66,5 @@ public interface WSCambio {
         String usuario,
         @WebParam(name = "password", targetNamespace = "")
         String password);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<PkgWS.ClsEntidadTipoOficina>
-     */
-    @WebMethod(operationName = "CargarTipoOficina")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CargarTipoOficina", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarTipoOficina")
-    @ResponseWrapper(localName = "CargarTipoOficinaResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarTipoOficinaResponse")
-    @Action(input = "http://PkgWsCambio/WSCambio/CargarTipoOficinaRequest", output = "http://PkgWsCambio/WSCambio/CargarTipoOficinaResponse")
-    public List<ClsEntidadTipoOficina> cargarTipoOficina();
 
 }
