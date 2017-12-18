@@ -6,7 +6,13 @@
 package PkgAplicacion;
 
 import PkgNegocios.DescargarDatos;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Properties;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,6 +63,7 @@ public class MenuController{
     public void AbrirMenuCasaCambio(ActionEvent event) throws IOException {
         setDataPane(fadeAnimate("/PkgAplicacion/CasaCambioDesign.fxml"));
         DescargarDatos();
+        CargarDatosOpciones();
     }
     
     public void DescargarDatos() throws IOException{
@@ -65,8 +72,13 @@ public class MenuController{
         thread.start();
     }
     
-    public void CargarDatosOpciones(){
+    public void CargarDatosOpciones() throws FileNotFoundException{
         String archivo = "Dir/DatosTO/DatosTO.json";
+        JsonParser parser = new JsonParser();
+        FileReader fr = new FileReader(archivo);
+        JsonElement datos = parser.parse(fr);
+        final Gson gson = new Gson();
+        final Properties propiedades = gson.fromJson(datos, Properties.class);
         
     }
     /* MENU CASA CAMBIO FIN */

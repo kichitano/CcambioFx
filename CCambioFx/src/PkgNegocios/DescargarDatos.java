@@ -8,6 +8,7 @@ package PkgNegocios;
 import PkgWS.ClsEntidadTipoOficina;
 import PkgWS.WSCambio;
 import PkgWS.WSCambio_Service;
+import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -27,16 +28,20 @@ public class DescargarDatos extends Thread{
     WSCambio wsCambio;
     
     public DescargarDatos() throws FileNotFoundException, IOException{
-        wsCambio = wsCambioService.getWSCambioPort();        
+        wsCambio = wsCambioService.getWSCambioPort(); 
+        
+        //CONSULTA DE DESCARGA DE DATOS DE TIPO DE OFICINA INICIO
         File DirDatosTO = new File("Dir/DatosTO");  //DIRECTORIO TIPO DE OFICINA
         if(!DirDatosTO.exists()){ //SI EL DIRECTORIO NO EXISTE
            DirDatosTO.mkdirs();
            JSONObject ObjDirDatosTOJson =  new JSONObject();
            JSONObject ArrayDirDatosTOJson = new JSONObject();
             for(int x=0;x<wsCambio.cargarTipoOficina().size();x++) {
+                
                 ClsEntidadTipoOficina entidadTipoOficina = new ClsEntidadTipoOficina();
                 entidadTipoOficina.setIdTIpoOficina(wsCambio.cargarTipoOficina().get(x).getIdTIpoOficina());
                 entidadTipoOficina.setDescripcionTipoOficina(wsCambio.cargarTipoOficina().get(x).getDescripcionTipoOficina());
+                ArrayDirDatosTOJson.accumulate(entidadTipoOficina.getDescripcionTipoOficina(),String.valueOf(entidadTipoOficina.getIdTIpoOficina()));
                 ArrayDirDatosTOJson.append(entidadTipoOficina.getDescripcionTipoOficina(),String.valueOf(entidadTipoOficina.getIdTIpoOficina()));
             }
             ObjDirDatosTOJson.put("TipoOficinas", ArrayDirDatosTOJson);
@@ -52,6 +57,8 @@ public class DescargarDatos extends Thread{
         }else{   //PERO SI EXISTE ENTONCES COMPROBAR LOS DATOS DE LOS ARCHIVOS
            
         }
+        //CONSULTA DE DESCARGA DE DATOS DE TIPO DE OFICINA INICIO
+        
     }
     
     @Override
