@@ -28,6 +28,18 @@ public interface WSCambio {
     /**
      * 
      * @return
+     *     returns java.util.List<PkgWS.ClsEntidadListaUbicacion>
+     */
+    @WebMethod(operationName = "CargarListaUbicacion")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CargarListaUbicacion", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarListaUbicacion")
+    @ResponseWrapper(localName = "CargarListaUbicacionResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarListaUbicacionResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/CargarListaUbicacionRequest", output = "http://PkgWsCambio/WSCambio/CargarListaUbicacionResponse")
+    public List<ClsEntidadListaUbicacion> cargarListaUbicacion();
+
+    /**
+     * 
+     * @return
      *     returns java.util.List<PkgWS.ClsEntidadTipoOficina>
      */
     @WebMethod(operationName = "CargarTipoOficina")
@@ -39,15 +51,33 @@ public interface WSCambio {
 
     /**
      * 
+     * @param casaCambioCelular
+     * @param estado
+     * @param direccionCasaCambio
+     * @param casaCambioTelefono
+     * @param tipoOficinaIdTipoOficina
+     * @param distritoIdDistrito
      * @return
-     *     returns java.util.List<PkgWS.ClsEntidadListaUbicacion>
+     *     returns PkgWS.ClsEntidadCasaCambio
      */
-    @WebMethod(operationName = "CargarListaUbicacion")
+    @WebMethod(operationName = "InsertarCasaCambio")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CargarListaUbicacion", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarListaUbicacion")
-    @ResponseWrapper(localName = "CargarListaUbicacionResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.CargarListaUbicacionResponse")
-    @Action(input = "http://PkgWsCambio/WSCambio/CargarListaUbicacionRequest", output = "http://PkgWsCambio/WSCambio/CargarListaUbicacionResponse")
-    public List<ClsEntidadListaUbicacion> cargarListaUbicacion();
+    @RequestWrapper(localName = "InsertarCasaCambio", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.InsertarCasaCambio")
+    @ResponseWrapper(localName = "InsertarCasaCambioResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.InsertarCasaCambioResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/InsertarCasaCambioRequest", output = "http://PkgWsCambio/WSCambio/InsertarCasaCambioResponse")
+    public ClsEntidadCasaCambio insertarCasaCambio(
+        @WebParam(name = "TipoOficina_IdTipoOficina", targetNamespace = "")
+        int tipoOficinaIdTipoOficina,
+        @WebParam(name = "DireccionCasaCambio", targetNamespace = "")
+        String direccionCasaCambio,
+        @WebParam(name = "Distrito_IdDistrito", targetNamespace = "")
+        int distritoIdDistrito,
+        @WebParam(name = "CasaCambioTelefono", targetNamespace = "")
+        String casaCambioTelefono,
+        @WebParam(name = "CasaCambioCelular", targetNamespace = "")
+        String casaCambioCelular,
+        @WebParam(name = "Estado", targetNamespace = "")
+        int estado);
 
     /**
      * 

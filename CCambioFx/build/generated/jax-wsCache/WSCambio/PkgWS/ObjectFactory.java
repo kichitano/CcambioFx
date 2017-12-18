@@ -24,6 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _InsertarCasaCambioResponse_QNAME = new QName("http://PkgWsCambio/", "InsertarCasaCambioResponse");
+    private final static QName _InsertarCasaCambio_QNAME = new QName("http://PkgWsCambio/", "InsertarCasaCambio");
     private final static QName _CargarTipoOficina_QNAME = new QName("http://PkgWsCambio/", "CargarTipoOficina");
     private final static QName _CargarListaUbicacion_QNAME = new QName("http://PkgWsCambio/", "CargarListaUbicacion");
     private final static QName _IniciarSesion_QNAME = new QName("http://PkgWsCambio/", "IniciarSesion");
@@ -87,11 +89,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InsertarCasaCambio }
+     * 
+     */
+    public InsertarCasaCambio createInsertarCasaCambio() {
+        return new InsertarCasaCambio();
+    }
+
+    /**
+     * Create an instance of {@link InsertarCasaCambioResponse }
+     * 
+     */
+    public InsertarCasaCambioResponse createInsertarCasaCambioResponse() {
+        return new InsertarCasaCambioResponse();
+    }
+
+    /**
      * Create an instance of {@link ClsEntidadTipoOficina }
      * 
      */
     public ClsEntidadTipoOficina createClsEntidadTipoOficina() {
         return new ClsEntidadTipoOficina();
+    }
+
+    /**
+     * Create an instance of {@link ClsEntidadCasaCambio }
+     * 
+     */
+    public ClsEntidadCasaCambio createClsEntidadCasaCambio() {
+        return new ClsEntidadCasaCambio();
     }
 
     /**
@@ -108,6 +134,24 @@ public class ObjectFactory {
      */
     public ClsEntidadListaUbicacion createClsEntidadListaUbicacion() {
         return new ClsEntidadListaUbicacion();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link InsertarCasaCambioResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "InsertarCasaCambioResponse")
+    public JAXBElement<InsertarCasaCambioResponse> createInsertarCasaCambioResponse(InsertarCasaCambioResponse value) {
+        return new JAXBElement<InsertarCasaCambioResponse>(_InsertarCasaCambioResponse_QNAME, InsertarCasaCambioResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link InsertarCasaCambio }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://PkgWsCambio/", name = "InsertarCasaCambio")
+    public JAXBElement<InsertarCasaCambio> createInsertarCasaCambio(InsertarCasaCambio value) {
+        return new JAXBElement<InsertarCasaCambio>(_InsertarCasaCambio_QNAME, InsertarCasaCambio.class, null, value);
     }
 
     /**

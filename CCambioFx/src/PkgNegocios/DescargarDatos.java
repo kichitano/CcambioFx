@@ -5,11 +5,7 @@
  */
 package PkgNegocios;
 
-<<<<<<< HEAD
-=======
 import PkgWS.ClsEntidadListaUbicacion;
-import PkgWS.ClsEntidadPersona;
->>>>>>> EDU
 import PkgWS.ClsEntidadTipoOficina;
 import PkgWS.WSCambio;
 import PkgWS.WSCambio_Service;
@@ -21,6 +17,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
+import java.util.ArrayList;
 import org.json.JSONObject;
 
 /**
@@ -33,28 +30,21 @@ public class DescargarDatos extends Thread{
     WSCambio wsCambio;
     
     public DescargarDatos() throws FileNotFoundException, IOException{
-<<<<<<< HEAD
-        wsCambio = wsCambioService.getWSCambioPort(); 
         
         //CONSULTA DE DESCARGA DE DATOS DE TIPO DE OFICINA INICIO
-=======
-        wsCambio = wsCambioService.getWSCambioPort();        
-        
-        
-        //KI_CHI
->>>>>>> EDU
+        wsCambio = wsCambioService.getWSCambioPort();      
         File DirDatosTO = new File("Dir/DatosTO");  //DIRECTORIO TIPO DE OFICINA
         if(!DirDatosTO.exists()){ //SI EL DIRECTORIO NO EXISTE
            DirDatosTO.mkdirs();
            JSONObject ObjDirDatosTOJson =  new JSONObject();
            JSONObject ArrayDirDatosTOJson = new JSONObject();
             for(int x=0;x<wsCambio.cargarTipoOficina().size();x++) {
-                
+                /*
                 ClsEntidadTipoOficina entidadTipoOficina = new ClsEntidadTipoOficina();
                 entidadTipoOficina.setIdTIpoOficina(wsCambio.cargarTipoOficina().get(x).getIdTIpoOficina());
                 entidadTipoOficina.setDescripcionTipoOficina(wsCambio.cargarTipoOficina().get(x).getDescripcionTipoOficina());
                 ArrayDirDatosTOJson.accumulate(entidadTipoOficina.getDescripcionTipoOficina(),String.valueOf(entidadTipoOficina.getIdTIpoOficina()));
-                ArrayDirDatosTOJson.append(entidadTipoOficina.getDescripcionTipoOficina(),String.valueOf(entidadTipoOficina.getIdTIpoOficina()));
+                ArrayDirDatosTOJson.append(entidadTipoOficina.getDescripcionTipoOficina(),String.valueOf(entidadTipoOficina.getIdTIpoOficina()));*/
             }
             ObjDirDatosTOJson.put("TipoOficinas", ArrayDirDatosTOJson);
             String archivo = "Dir/DatosTO/DatosTO.json";
@@ -69,13 +59,9 @@ public class DescargarDatos extends Thread{
         }else{   //PERO SI EXISTE ENTONCES COMPROBAR LOS DATOS DE LOS ARCHIVOS
            
         }
-<<<<<<< HEAD
         //CONSULTA DE DESCARGA DE DATOS DE TIPO DE OFICINA INICIO
         
-=======
-        //KICHI
-        
-        // EDU
+        //CONSULTA DE DESCARGA DE DATOS DE LISTA DE UBICACION INICIO
         File DirDatosLU = new File("Dir/DatosLU");  //DIRECTORIO TIPO DE OFICINA
         if(!DirDatosLU.exists()){ //SI EL DIRECTORIO NO EXISTE
            DirDatosLU.mkdirs();
@@ -110,7 +96,7 @@ public class DescargarDatos extends Thread{
         }else{   //PERO SI EXISTE ENTONCES COMPROBAR LOS DATOS DE LOS ARCHIVOS
            
         }
->>>>>>> EDU
+        //CONSULTA DE DESCARGA DE DATOS DE LISTA DE UBICACION FIN
     }
     
     @Override

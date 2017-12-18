@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://PkgWsCambio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://PkgWsCambio/">
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://PkgWsCambio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://PkgWsCambio/">
 
 <xs:element name="CargarListaUbicacion" type="tns:CargarListaUbicacion"/>
 
@@ -11,6 +11,10 @@
 <xs:element name="IniciarSesion" type="tns:IniciarSesion"/>
 
 <xs:element name="IniciarSesionResponse" type="tns:IniciarSesionResponse"/>
+
+<xs:element name="InsertarCasaCambio" type="tns:InsertarCasaCambio"/>
+
+<xs:element name="InsertarCasaCambioResponse" type="tns:InsertarCasaCambioResponse"/>
 
 <xs:complexType name="CargarListaUbicacion">
 <xs:sequence/>
@@ -47,6 +51,35 @@
 <xs:sequence>
 <xs:element name="descripcionTipoOficina" type="xs:string" minOccurs="0"/>
 <xs:element name="idTIpoOficina" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertarCasaCambio">
+<xs:sequence>
+<xs:element name="TipoOficina_IdTipoOficina" type="xs:int"/>
+<xs:element name="DireccionCasaCambio" type="xs:string" minOccurs="0"/>
+<xs:element name="Distrito_IdDistrito" type="xs:int"/>
+<xs:element name="CasaCambioTelefono" type="xs:string" minOccurs="0"/>
+<xs:element name="CasaCambioCelular" type="xs:string" minOccurs="0"/>
+<xs:element name="Estado" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertarCasaCambioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:clsEntidadCasaCambio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clsEntidadCasaCambio">
+<xs:sequence>
+<xs:element name="casaCambioCelular" type="xs:string" minOccurs="0"/>
+<xs:element name="casaCambioTelefono" type="xs:string" minOccurs="0"/>
+<xs:element name="direccionCasaCambio" type="xs:string" minOccurs="0"/>
+<xs:element name="distrito_IdDistrito" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="idCasaCambio" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoOficina_IdTipoOficina" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
