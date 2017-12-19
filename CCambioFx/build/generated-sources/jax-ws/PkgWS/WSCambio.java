@@ -27,6 +27,24 @@ public interface WSCambio {
 
     /**
      * 
+     * @param password
+     * @param usuario
+     * @return
+     *     returns PkgWS.ClsEntidadPersona
+     */
+    @WebMethod(operationName = "IniciarSesion")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "IniciarSesion", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.IniciarSesion")
+    @ResponseWrapper(localName = "IniciarSesionResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.IniciarSesionResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/IniciarSesionRequest", output = "http://PkgWsCambio/WSCambio/IniciarSesionResponse")
+    public ClsEntidadPersona iniciarSesion(
+        @WebParam(name = "usuario", targetNamespace = "")
+        String usuario,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<PkgWS.ClsEntidadTipoOficina>
      */
@@ -51,20 +69,59 @@ public interface WSCambio {
 
     /**
      * 
-     * @param password
-     * @param usuario
+     * @param casaCambioCelular
+     * @param estado
+     * @param direccionCasaCambio
+     * @param casaCambioTelefono
+     * @param tipoOficinaIdTipoOficina
+     * @param distritoIdDistrito
      * @return
-     *     returns PkgWS.ClsEntidadPersona
+     *     returns PkgWS.ClsEntidadCasaCambio
      */
-    @WebMethod(operationName = "IniciarSesion")
+    @WebMethod(operationName = "InsertarCasaCambio")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "IniciarSesion", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.IniciarSesion")
-    @ResponseWrapper(localName = "IniciarSesionResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.IniciarSesionResponse")
-    @Action(input = "http://PkgWsCambio/WSCambio/IniciarSesionRequest", output = "http://PkgWsCambio/WSCambio/IniciarSesionResponse")
-    public ClsEntidadPersona iniciarSesion(
-        @WebParam(name = "usuario", targetNamespace = "")
-        String usuario,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
+    @RequestWrapper(localName = "InsertarCasaCambio", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.InsertarCasaCambio")
+    @ResponseWrapper(localName = "InsertarCasaCambioResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.InsertarCasaCambioResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/InsertarCasaCambioRequest", output = "http://PkgWsCambio/WSCambio/InsertarCasaCambioResponse")
+    public ClsEntidadCasaCambio insertarCasaCambio(
+        @WebParam(name = "TipoOficina_IdTipoOficina", targetNamespace = "")
+        int tipoOficinaIdTipoOficina,
+        @WebParam(name = "DireccionCasaCambio", targetNamespace = "")
+        String direccionCasaCambio,
+        @WebParam(name = "Distrito_IdDistrito", targetNamespace = "")
+        int distritoIdDistrito,
+        @WebParam(name = "CasaCambioTelefono", targetNamespace = "")
+        String casaCambioTelefono,
+        @WebParam(name = "CasaCambioCelular", targetNamespace = "")
+        String casaCambioCelular,
+        @WebParam(name = "Estado", targetNamespace = "")
+        int estado);
+
+    /**
+     * 
+     * @param personaNumeroDocumentoPersona
+     * @param passwordUsuario
+     * @param estadoUsuario
+     * @param nombreUsuario
+     * @param tipoUsuarioIdTipoUsuario
+     * @return
+     *     returns PkgWS.ClsEntidadUsuario
+     */
+    @WebMethod(operationName = "InsertarUsuario")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "InsertarUsuario", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.InsertarUsuario")
+    @ResponseWrapper(localName = "InsertarUsuarioResponse", targetNamespace = "http://PkgWsCambio/", className = "PkgWS.InsertarUsuarioResponse")
+    @Action(input = "http://PkgWsCambio/WSCambio/InsertarUsuarioRequest", output = "http://PkgWsCambio/WSCambio/InsertarUsuarioResponse")
+    public ClsEntidadUsuario insertarUsuario(
+        @WebParam(name = "Persona_NumeroDocumentoPersona", targetNamespace = "")
+        String personaNumeroDocumentoPersona,
+        @WebParam(name = "NombreUsuario", targetNamespace = "")
+        String nombreUsuario,
+        @WebParam(name = "PasswordUsuario", targetNamespace = "")
+        String passwordUsuario,
+        @WebParam(name = "TipoUsuario_IdTipoUsuario", targetNamespace = "")
+        int tipoUsuarioIdTipoUsuario,
+        @WebParam(name = "EstadoUsuario", targetNamespace = "")
+        int estadoUsuario);
 
 }

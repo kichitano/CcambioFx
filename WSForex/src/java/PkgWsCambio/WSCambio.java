@@ -14,9 +14,11 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import PkgEntidad.ClsEntidadPersona;
 import PkgEntidad.ClsEntidadTipoOficina;
+import PkgEntidad.ClsEntidadUsuario;
 import PkgNegocios.ClsNegocioCasaCambio;
 import PkgNegocios.ClsNegocioListaUbicacion;
 import PkgNegocios.ClsNegocioTipoOficina;
+import PkgNegocios.ClsNegocioUsuario;
 import java.util.ArrayList;
 
 /**
@@ -86,6 +88,25 @@ public class WSCambio {
         negocioCasaCambio.guardarCasaCambio(entidadCasaCambio);
       
         return entidadCasaCambio;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "InsertarUsuario")
+    public PkgEntidad.ClsEntidadUsuario InsertarUsuario(@WebParam(name = "Persona_NumeroDocumentoPersona") String Persona_NumeroDocumentoPersona, @WebParam(name = "NombreUsuario") String NombreUsuario, @WebParam(name = "PasswordUsuario") String PasswordUsuario, @WebParam(name = "TipoUsuario_IdTipoUsuario") int TipoUsuario_IdTipoUsuario, @WebParam(name = "EstadoUsuario") int EstadoUsuario) {
+        ClsNegocioUsuario negocioUsuario = new ClsNegocioUsuario();
+        ClsEntidadUsuario entidadUsuario = new ClsEntidadUsuario();
+        
+        entidadUsuario.setPersona_NumeroDocumentoPersona(Persona_NumeroDocumentoPersona);
+        entidadUsuario.setNombreUsuario(NombreUsuario);
+        entidadUsuario.setPasswordUsuario(PasswordUsuario);
+        entidadUsuario.setTipoUsuario_IdTipoUsuario(String.valueOf(TipoUsuario_IdTipoUsuario));
+        entidadUsuario.setEstadoUsuario(String.valueOf(EstadoUsuario));
+             
+        negocioUsuario.guardarUsuario(entidadUsuario);
+      
+        return entidadUsuario;
     }
 
 }

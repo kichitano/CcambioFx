@@ -147,3 +147,84 @@ DELIMITER ;
 CREATE VIEW
 vista_TipoOficina as
 select * from TipoOficina;
+
+CREATE VIEW
+vista_Departamentos as
+select * from departamento
+
+CREATE VIEW
+vista_Distrito as
+SELECT * FROM distrito
+
+CREATE VIEW
+vista_Provincia as
+select * from provincia
+
+
+CREATE VIEW
+vista_ubicacion as
+select d.IdDepartamento, d.NombreDepartamento, p.idProvincia, 
+p.NombreProvincia, di.IdDistrito, di.NombreDistrito
+from Departamento as d 
+inner join Provincia as p
+on d.IdDepartamento = p.Departamento_IdDepartamento
+inner join Distrito as di
+on p.idProvincia = di.Provincia_idProvincia
+
+
+/* Procedimiento Almacenado insertarCasaCambio */
+DELIMITER @@
+CREATE PROCEDURE insertarCasaCambio
+(
+parTipoOficina_IdTipoOficina int, 
+parDireccionCasaCambio varchar(150), 
+parDistrito_IdDistrito int, 
+parCasaCambioTelefono varchar(15), 
+parCasaCambioCelular varchar(20), 
+parEstado int
+)
+BEGIN
+ INSERT INTO casacambio(
+TipoOficina_IdTipoOficina,
+DireccionCasaCambio,
+Distrito_IdDistrito,
+CasaCambioTelefono,
+CasaCambioCelular,
+Estado) 
+VALUES(
+parTipoOficina_IdTipoOficina,
+parDireccionCasaCambio,
+parDistrito_IdDistrito,
+parCasaCambioTelefono,
+parCasaCambioCelular,
+parEstado
+);
+END @@ 
+DELIMITER ;
+
+/* Procedimiento Almacenado insertarUsuario */
+DELIMITER @@
+CREATE PROCEDURE insertarUsuario
+(
+parPersona_NumeroDocumentoPersona varchar(25), 
+parNombreUsuario varchar(25), 
+parPasswordUsuario varchar(16), 
+parTipoUsuario_IdTipoUsuario int, 
+parEstadoUsuario int
+)
+BEGIN
+ INSERT INTO usuario(
+Persona_NumeroDocumentoPersona,
+NombreUsuario,
+PasswordUsuario,
+TipoUsuario_IdTipoUsuario,
+EstadoUsuario) 
+VALUES(
+parPersona_NumeroDocumentoPersona,
+parNombreUsuario,
+parPasswordUsuario,
+parTipoUsuario_IdTipoUsuario,
+parEstadoUsuario
+);
+END @@ 
+DELIMITER ;

@@ -4,6 +4,12 @@
 <xsd:import namespace="http://PkgWsCambio/" schemaLocation="http://localhost:8080/WSForex/WSCambio?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="IniciarSesion">
+<part name="parameters" element="tns:IniciarSesion"/>
+</message>
+<message name="IniciarSesionResponse">
+<part name="parameters" element="tns:IniciarSesionResponse"/>
+</message>
 <message name="CargarTipoOficina">
 <part name="parameters" element="tns:CargarTipoOficina"/>
 </message>
@@ -16,13 +22,23 @@
 <message name="CargarListaUbicacionResponse">
 <part name="parameters" element="tns:CargarListaUbicacionResponse"/>
 </message>
-<message name="IniciarSesion">
-<part name="parameters" element="tns:IniciarSesion"/>
+<message name="InsertarCasaCambio">
+<part name="parameters" element="tns:InsertarCasaCambio"/>
 </message>
-<message name="IniciarSesionResponse">
-<part name="parameters" element="tns:IniciarSesionResponse"/>
+<message name="InsertarCasaCambioResponse">
+<part name="parameters" element="tns:InsertarCasaCambioResponse"/>
+</message>
+<message name="InsertarUsuario">
+<part name="parameters" element="tns:InsertarUsuario"/>
+</message>
+<message name="InsertarUsuarioResponse">
+<part name="parameters" element="tns:InsertarUsuarioResponse"/>
 </message>
 <portType name="WSCambio">
+<operation name="IniciarSesion">
+<input wsam:Action="http://PkgWsCambio/WSCambio/IniciarSesionRequest" message="tns:IniciarSesion"/>
+<output wsam:Action="http://PkgWsCambio/WSCambio/IniciarSesionResponse" message="tns:IniciarSesionResponse"/>
+</operation>
 <operation name="CargarTipoOficina">
 <input wsam:Action="http://PkgWsCambio/WSCambio/CargarTipoOficinaRequest" message="tns:CargarTipoOficina"/>
 <output wsam:Action="http://PkgWsCambio/WSCambio/CargarTipoOficinaResponse" message="tns:CargarTipoOficinaResponse"/>
@@ -31,13 +47,26 @@
 <input wsam:Action="http://PkgWsCambio/WSCambio/CargarListaUbicacionRequest" message="tns:CargarListaUbicacion"/>
 <output wsam:Action="http://PkgWsCambio/WSCambio/CargarListaUbicacionResponse" message="tns:CargarListaUbicacionResponse"/>
 </operation>
-<operation name="IniciarSesion">
-<input wsam:Action="http://PkgWsCambio/WSCambio/IniciarSesionRequest" message="tns:IniciarSesion"/>
-<output wsam:Action="http://PkgWsCambio/WSCambio/IniciarSesionResponse" message="tns:IniciarSesionResponse"/>
+<operation name="InsertarCasaCambio">
+<input wsam:Action="http://PkgWsCambio/WSCambio/InsertarCasaCambioRequest" message="tns:InsertarCasaCambio"/>
+<output wsam:Action="http://PkgWsCambio/WSCambio/InsertarCasaCambioResponse" message="tns:InsertarCasaCambioResponse"/>
+</operation>
+<operation name="InsertarUsuario">
+<input wsam:Action="http://PkgWsCambio/WSCambio/InsertarUsuarioRequest" message="tns:InsertarUsuario"/>
+<output wsam:Action="http://PkgWsCambio/WSCambio/InsertarUsuarioResponse" message="tns:InsertarUsuarioResponse"/>
 </operation>
 </portType>
 <binding name="WSCambioPortBinding" type="tns:WSCambio">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="IniciarSesion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="CargarTipoOficina">
 <soap:operation soapAction=""/>
 <input>
@@ -56,7 +85,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="IniciarSesion">
+<operation name="InsertarCasaCambio">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="InsertarUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -12,6 +12,14 @@
 
 <xs:element name="IniciarSesionResponse" type="tns:IniciarSesionResponse"/>
 
+<xs:element name="InsertarCasaCambio" type="tns:InsertarCasaCambio"/>
+
+<xs:element name="InsertarCasaCambioResponse" type="tns:InsertarCasaCambioResponse"/>
+
+<xs:element name="InsertarUsuario" type="tns:InsertarUsuario"/>
+
+<xs:element name="InsertarUsuarioResponse" type="tns:InsertarUsuarioResponse"/>
+
 <xs:complexType name="CargarListaUbicacion">
 <xs:sequence/>
 </xs:complexType>
@@ -50,6 +58,35 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="InsertarCasaCambio">
+<xs:sequence>
+<xs:element name="TipoOficina_IdTipoOficina" type="xs:int"/>
+<xs:element name="DireccionCasaCambio" type="xs:string" minOccurs="0"/>
+<xs:element name="Distrito_IdDistrito" type="xs:int"/>
+<xs:element name="CasaCambioTelefono" type="xs:string" minOccurs="0"/>
+<xs:element name="CasaCambioCelular" type="xs:string" minOccurs="0"/>
+<xs:element name="Estado" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertarCasaCambioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:clsEntidadCasaCambio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clsEntidadCasaCambio">
+<xs:sequence>
+<xs:element name="casaCambioCelular" type="xs:string" minOccurs="0"/>
+<xs:element name="casaCambioTelefono" type="xs:string" minOccurs="0"/>
+<xs:element name="direccionCasaCambio" type="xs:string" minOccurs="0"/>
+<xs:element name="distrito_IdDistrito" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="idCasaCambio" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoOficina_IdTipoOficina" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="IniciarSesion">
 <xs:sequence>
 <xs:element name="usuario" type="xs:string" minOccurs="0"/>
@@ -72,6 +109,33 @@
 <xs:element name="idTipoDocumento" type="xs:string" minOccurs="0"/>
 <xs:element name="nombresPersona" type="xs:string" minOccurs="0"/>
 <xs:element name="numeroDocumentoPersona" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertarUsuario">
+<xs:sequence>
+<xs:element name="Persona_NumeroDocumentoPersona" type="xs:string" minOccurs="0"/>
+<xs:element name="NombreUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="PasswordUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="TipoUsuario_IdTipoUsuario" type="xs:int"/>
+<xs:element name="EstadoUsuario" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:clsEntidadUsuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clsEntidadUsuario">
+<xs:sequence>
+<xs:element name="estadoUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="passwordUsuario" type="xs:string" minOccurs="0"/>
+<xs:element name="persona_NumeroDocumentoPersona" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoUsuario_IdTipoUsuario" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>
