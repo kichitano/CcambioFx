@@ -20,7 +20,7 @@ public class ClsNegocioCasaCambio {
     public void guardarCasaCambio(ClsEntidadCasaCambio clsEntidadCasaCambio) {
         con = new ClsConexion();
         Connection connection = con.getConnection();
-        String cadenaSql = "insert into casacambio values (?,?,?,?,?,?)";
+        String cadenaSql = "CALL insertarCasaCambio (?,?,?,?,?,?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(cadenaSql);
                 preparedStatement.setString(1,clsEntidadCasaCambio.getTipoOficina_IdTipoOficina());
