@@ -29,10 +29,7 @@ public class ClsNegocioPersona {
         
         try{
             PreparedStatement consulta;
-            consulta = connection.prepareStatement("Select TipoDocumento_IdTipoDocumento,NumeroDocumentoPersona,ApellidoPrimeroPersona,\n" +
-                "ApellidoSegundoPersona,NombresPersona,Pais_idPais,Ocupacion_IdOcupacion \n" +
-                "from persona inner join usuario on NumeroDocumentoPersona = Persona_NumeroDocumentoPersona\n" +
-                "where NombreUsuario = ? AND PasswordUsuario= ? AND EstadoUsuario = 1");
+            consulta = connection.prepareStatement("CALL sp_login (?,?)");
             consulta.setString(1, usuario);
             consulta.setString(2, password);
             ResultSet resultado = consulta.executeQuery();
@@ -52,4 +49,23 @@ public class ClsNegocioPersona {
     
         return entidadUsuario;
     }    
+     public void guardarPersona(ClsEntidadPersona clsEntidadPersona) {
+        conexion = new ClsConexion();
+        Connection connection = conexion.getConnection();
+        String cadenaSql = "CALL insertarPersona (?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(cadenaSql);
+                preparedStatement.setString(1,clsEntidadPersona.getIdTipoDocumento());
+                preparedStatement.setString(2,clsEntidadPersona.getNumeroDocumentoPersona());
+                preparedStatement.setString(3,clsEntidadPersona.getApellidoPrimeroPersona());
+                preparedStatement.setString(4,clsEntidadPersona.getApellidoSegundoPersona());
+                preparedStatement.setString(5,clsEntidadPersona.getNombresPersona());
+                preparedStatement.setString(6,clsEntidadPersona.getIdPais());
+                preparedStatement.setString(7,clsEntidadPersona.getIdOcupacion());
+                preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        }catch (Exception e){
+        }
+    }
 }

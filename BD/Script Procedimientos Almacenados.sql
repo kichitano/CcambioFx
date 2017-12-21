@@ -148,18 +148,25 @@ CREATE VIEW
 vista_TipoOficina as
 select * from TipoOficina;
 
-CREATE VIEW
-vista_Departamentos as
-select * from departamento
+/* Store Procedure Login */
+DELIMITER @@
+CREATE PROCEDURE sp_login
+(
+nombre varchar(50), 
+pass varchar(50)  
+)
+BEGIN  
+Select 
+TipoDocumento_IdTipoDocumento,NumeroDocumentoPersona,ApellidoPrimeroPersona,
+ApellidoSegundoPersona,NombresPersona,Pais_idPais,Ocupacion_IdOcupacion 
+from persona inner join usuario on NumeroDocumentoPersona = Persona_NumeroDocumentoPersona
+where NombreUsuario = nombre AND PasswordUsuario= pass AND EstadoUsuario = 1;
+END; @@ 
+DELIMITER ;
 
-CREATE VIEW
-vista_Distrito as
-SELECT * FROM distrito
+CALL sp_login ('n0thing','123456');
 
-CREATE VIEW
-vista_Provincia as
-select * from provincia
-
+/* Vista Ubicacion */
 
 CREATE VIEW
 vista_ubicacion as
@@ -225,6 +232,40 @@ parNombreUsuario,
 parPasswordUsuario,
 parTipoUsuario_IdTipoUsuario,
 parEstadoUsuario
+);
+END @@ 
+DELIMITER ;
+
+/* Procedimiento Almacenado insertarPersona */
+DELIMITER @@
+CREATE PROCEDURE insertarPersona
+(
+parTipoDocumento_IdTipoDocumento varchar(5), 
+parNumeroDocumentoPersona varchar(25), 
+parApellidoPrimeroPersona varchar(100), 
+parApellidoSegundoPersona varchar(100), 
+parNombresPersona varchar(100), 
+parPais_idPais varchar(5),
+parOcupacion_IdOcupacion varchar(5)
+)
+BEGIN
+ INSERT INTO persona(
+TipoDocumento_IdTipoDocumento,
+NumeroDocumentoPersona,
+ApellidoPrimeroPersona,
+ApellidoSegundoPersona,
+NombresPersona,
+Pais_idPais,
+Ocupacion_IdOcupacion
+) 
+VALUES(
+parTipoDocumento_IdTipoDocumento,
+parNumeroDocumentoPersona,
+parApellidoPrimeroPersona,
+parApellidoSegundoPersona,
+parNombresPersona,
+parPais_idPais,
+parOcupacion_IdOcupacion
 );
 END @@ 
 DELIMITER ;

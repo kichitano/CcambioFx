@@ -109,4 +109,25 @@ public class WSCambio {
         return entidadUsuario;
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "InsertarPersona")
+    public ClsEntidadPersona InsertarPersona(@WebParam(name = "IdTipoDocumento") String IdTipoDocumento, @WebParam(name = "NumeroDocumentoPersona") String NumeroDocumentoPersona, @WebParam(name = "ApellidoPrimeroPersona") String ApellidoPrimeroPersona, @WebParam(name = "ApellidoSegundoPersona") String ApellidoSegundoPersona, @WebParam(name = "NombresPersona") String NombresPersona, @WebParam(name = "IdPais") String IdPais, @WebParam(name = "IdOcupacion") String IdOcupacion) {
+        ClsNegocioPersona negocioPersona = new ClsNegocioPersona();
+        ClsEntidadPersona entidadPersona = new ClsEntidadPersona();
+        
+        entidadPersona.setIdTipoDocumento(IdTipoDocumento);
+        entidadPersona.setNumeroDocumentoPersona(NumeroDocumentoPersona);
+        entidadPersona.setApellidoPrimeroPersona(ApellidoPrimeroPersona);
+        entidadPersona.setApellidoSegundoPersona(ApellidoSegundoPersona);
+        entidadPersona.setNombresPersona(NombresPersona);
+        entidadPersona.setIdPais(IdPais);
+        entidadPersona.setIdOcupacion(IdOcupacion);
+             
+        negocioPersona.guardarPersona(entidadPersona);
+      
+        return entidadPersona;
+    }
+
 }
